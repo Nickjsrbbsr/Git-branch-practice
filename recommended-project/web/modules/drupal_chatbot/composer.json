@@ -1,0 +1,29 @@
+{
+  "name": "drupal/drupal_chatbot",
+  "description": "helps setup Voice and Text Based Chat Bot that interacts with User as a common layer between Drupal and NLP.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "homepage": "https://www.drupal.org/project/drupal_chatbot",
+  "authors": [
+    {
+      "name": "Rajeshreeputra Pravin Dhondiba Gaikwad",
+      "homepage": "https://www.drupal.org/u/Rajeshreeputra",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Sameer Choudhary",
+      "homepage": "https://www.drupal.org/u/samhaldia",
+      "role": "Maintainer"
+    },
+    {
+      "name": "krishna priya",
+      "homepage": "https://www.drupal.org/u/tkrishnapriya",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/drupal_chatbot",
+    "source": "https://git.drupalcode.org/project/drupal_chatbot"
+  }
+}

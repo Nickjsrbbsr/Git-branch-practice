@@ -1,0 +1,8 @@
+name: 'College Registration'
+type: module
+description: 'A module for managing college registrations.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:field
+  - drupal:text

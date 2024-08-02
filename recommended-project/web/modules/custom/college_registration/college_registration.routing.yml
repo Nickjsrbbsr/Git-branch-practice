@@ -1,0 +1,31 @@
+# college_registration.form:
+#   path: '/college-registration'
+#   defaults:
+#     _form: '\Drupal\college_registration\Form\RegistrationForm'
+#     _title: 'College Registration Form'
+#   requirements:
+#     _permission: 'access content'
+
+# college_registration.list:
+#   path: '/college-registration/list'
+#   defaults:
+#     _controller: '\Drupal\college_registration\Controller\RegistrationController::list'
+#     _title: 'Registration List'
+#   requirements:
+#     _permission: 'administer site configuration'
+
+college_registration.registration_form:
+  path: '/college-registration'
+  defaults:
+    _form: '\Drupal\college_registration\Form\RegistrationForm'
+    _title: 'College Registration Form'
+  requirements:
+    _permission: 'access content'
+
+college_registration.registration_list:
+  path: '/college-registration/list'
+  defaults:
+    _controller: '\Drupal\college_registration\Controller\RegistrationController::list'
+    _title: 'Registration List'
+  requirements:
+    _permission: 'administer site configuration'

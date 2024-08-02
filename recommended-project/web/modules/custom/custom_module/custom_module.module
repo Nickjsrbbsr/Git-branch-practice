@@ -1,0 +1,75 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ * Provides help for the module.
+ */
+function custom_module_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.custom_module':
+      return '<p>' . t('Help text for Custom Module.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ * Defines menu items for the module.
+ */
+function custom_module_menu() {
+  $items = [];
+
+  // Custom page
+  $items['custom-page'] = [
+    'title' => 'Custom Page',
+    'page callback' => 'custom_module_custom_page',
+    'access arguments' => ['access content'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}
+
+/**
+ * Page callback function for custom page.
+ * Displays content for the custom page.
+ */
+function custom_module_custom_page() {
+  return [
+    '#markup' => '<p>' . t('Welcome to the custom page created by Custom Module!') . '</p>',
+  ];
+}
+
+/**
+ * Implements hook_user_insert().
+ * Adds a custom message when a new user registers.
+ */
+function custom_module_user_insert($account) {
+  drupal_set_message(t('Welcome to our site'));
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ * Modifies the local tasks tabs.
+ */
+function custom_module_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\RefinableCacheableDependencyInterface &$cacheability) {
+  if ($route_name == 'user.page') {
+    // Modify 'View' tab title for user profile page.
+    $data['tabs'][0]['user.page']['#link']['title'] = 'Profile';
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ * Alters the display of a node.
+ */
+function custom_module_node_view(array &$build, $node, $display, $view_mode) {
+  if ($node->getType() == 'article' && $view_mode == 'full') {
+    // Add custom content to node display.
+    $build['custom_field'] = [
+      '#markup' => '<p>' . t('Custom content added by Custom Module.') . '</p>',
+      '#weight' => 10,
+    ];
+  }
+}

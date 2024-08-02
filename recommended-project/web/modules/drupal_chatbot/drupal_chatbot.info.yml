@@ -1,0 +1,9 @@
+name: drupal_chatbot
+description: Drupal Chat Bot
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2022-01-27
+version: '2.0.x-dev'
+project: 'drupal_chatbot'
+datestamp: 1643278506
